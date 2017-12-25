@@ -1,6 +1,6 @@
 'use strict';
 
-var PlayersService = require('../services/players'),
+var PlayersService = require('../../services/players'),
     axios = require('axios');
 
 

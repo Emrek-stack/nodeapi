@@ -10,7 +10,7 @@ const express = require('express'),
   dotenv = require('dotenv');
 
 //const WEB_CONTROLLER_PATH = '../controllers';
-const API_CONTROLLER_PATH = '../controllers';
+const API_CONTROLLER_PATH = '../controllers/api/';
 
 
 
@@ -33,7 +33,8 @@ app.set('view engine', '.hbs');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
+// set logging
+app.use(logger('combined'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
