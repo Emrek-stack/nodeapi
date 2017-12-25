@@ -1,0 +1,2 @@
+ROOT_URL=http://api.fanatik.com.tr
+MONGO_URI=mongodb://localhost:32776/blog

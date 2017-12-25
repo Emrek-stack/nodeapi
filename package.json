@@ -1,0 +1,47 @@
+{
+  "name": "react-setup-tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmreKarahan/react-setup-tutorial.git"
+  },
+  "keywords": [
+    "react",
+    "webpack",
+    "babel",
+    "node",
+    "express"
+  ],
+  "author": "Emre Karahan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EmreKarahan/react-setup-tutorial/issues"
+  },
+  "homepage": "https://github.com/EmreKarahan/react-setup-tutorial#readme",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^4.0.0",
+    "elasticsearch": "^14.0.0",
+    "express": "^4.15.3",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^4.11.4",
+    "morgan": "^1.8.2",
+    "node-uuid": "^1.4.8",
+    "swagger-tools": "^0.10.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.3.0",
+    "nodemon": "^1.11.0",
+    "webpack": "^3.3.0",
+    "webpack-dev-server": "^2.5.1"
+  }
+}
