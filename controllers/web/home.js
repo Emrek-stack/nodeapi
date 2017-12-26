@@ -13,7 +13,7 @@ class HomeController {
     }
 
     index(req, res) {
-        res.json("sasdafs");
+        res.render('web/home/index', {title: 'aa'});
     }
 
     
