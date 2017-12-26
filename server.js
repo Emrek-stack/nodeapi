@@ -11,6 +11,7 @@ const express = require('express'),
 
 //const WEB_CONTROLLER_PATH = '../controllers';
 const API_CONTROLLER_PATH = '../controllers/api/';
+const WEB_CONTROLLER_PATH = '../controllers/web/';
 
 
 
@@ -61,6 +62,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 // var pc = new PlayersController(playersApiV1);
 
 
+var webRouter = express.Router();
+app.use('/', webRouter);
 
 var apiRouter = express.Router();
 app.use('/api', apiRouter);
@@ -73,6 +76,7 @@ apiRouter.use('/v1', apiV1);
 
 //register.register(WEB_CONTROLLER_PATH, app);
 register.register(API_CONTROLLER_PATH, apiV1);
+register.register(WEB_CONTROLLER_PATH, webRouter);
 
 
 // function registerControllers(controllerPath, registerRouter) {

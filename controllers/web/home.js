@@ -1,5 +1,6 @@
 'use strict';
-import axios  from 'axios';
+
+var axios = require('axios');
 
 class HomeController {
     constructor(router) {
@@ -12,7 +13,7 @@ class HomeController {
     }
 
     index(req, res) {
-        res.render('web/home/index', {title: 'aa', layout: 'layout.hbs' });
+        res.json("sasdafs");
     }
 
     
