@@ -2,9 +2,7 @@ var path = require('path'),
     fs = require('fs'),
     express = require('express');
 
-
 module.exports = {
-
     register: function registerController(controllerPath, registerRouter) {
         // MVC Controllers
         var controllerList = [];

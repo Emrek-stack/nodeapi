@@ -6,7 +6,8 @@ const express = require('express'),
   cookieParser = require('cookie-parser'),
   bodyParser = require('body-parser'),
   mongoose = require('mongoose'),
-  register = require('./config/controllerRegister'),
+  registerController = require('./app_start/controllerRegister'),
+  reqisterRoutes = require('./app_start/registerRoutes'),
   dotenv = require('dotenv');
 
 //const WEB_CONTROLLER_PATH = '../controllers';
@@ -71,29 +72,10 @@ app.use('/api', apiRouter);
 var apiV1 = express.Router();
 apiRouter.use('/v1', apiV1);
 
-//registerControllers(WEB_CONTROLLER_PATH, app);
-//registerControllers(API_CONTROLLER_PATH, apiV1);
 
 //register.register(WEB_CONTROLLER_PATH, app);
-register.register(API_CONTROLLER_PATH, apiV1);
-register.register(WEB_CONTROLLER_PATH, webRouter);
-
-
-// function registerControllers(controllerPath, registerRouter) {
-//   // MVC Controllers
-//   var controllerList = [];
-//   fs.readdirSync(path.join(__dirname, controllerPath)).forEach(function (file) {
-//     if (file.substr(-3) === ".js") {
-//       var basePath = path.basename(file, ".js");
-//       var Controller = require(`./${controllerPath}/${file}`);
-//       var router = express.Router();
-//       registerRouter.use(`/${basePath}`, router);
-//       controllerList[basePath] = new Controller(router);
-//     }
-//   });
-// }
-
-
+registerController.register(API_CONTROLLER_PATH, apiV1);
+registerController.register(WEB_CONTROLLER_PATH, webRouter);
 
 
 // seed the db for testing
@@ -135,40 +117,6 @@ var server = app.listen(3000, function () {
 });
 
 
-// // Swagger Docs
-// var swaggerTools = require('swagger-tools');
-// // swaggerRouter configuration
-// var options = {
-//   swaggerUi: '/swagger.json',
-//   controllers: './controllers'
-// };
-
-// The Swagger document (require it, build it programmatically, fetch it from a URL, ...)
-//var swaggerDoc = require('./swagger.json');
-
-// // Initialize the Swagger middleware
-// swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
-//     // Interpret Swagger resources and attach metadata to request - must be first in swagger-tools middleware chain
-//     app.use(middleware.swaggerMetadata());
-
-//     // Validate Swagger requests
-//     app.use(middleware.swaggerValidator());
-
-//     // Route validated requests to appropriate controller
-//     app.use(middleware.swaggerRouter(options));
-
-//     // Serve the Swagger documents and Swagger UI
-//     app.use(middleware.swaggerUi());
-
-//     // start the server
-//     var server = app.listen(3000, function () {
-//         var host = server.address().address;
-//         host = (host === '::' ? 'localhost' : host);
-//         var port = server.address().port;
-
-//         console.log('listening at http://%s:%s', host, port);
-//     });
-// });m
 
 // mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost/posts');
 // var db = mongoose.connection;
